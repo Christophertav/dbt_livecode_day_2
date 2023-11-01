@@ -1,4 +1,4 @@
-SELECT 
+with sub as (SELECT 
     products_id, 
     date_date, 
     orders_id,
@@ -10,3 +10,8 @@ SELECT
 FROM {{ref("stg_raw__sales")}} s
 LEFT JOIN {{ref("stg_raw__product")}} p 
 		USING (products_id)
+)
+
+Select *
+, {{margin_percent(revenue,purchase_cost)}} as margin_percent
+from sub
