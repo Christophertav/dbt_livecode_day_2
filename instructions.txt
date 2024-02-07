@@ -40,3 +40,10 @@ dbt_utils is the most famous package of dbt, you need to install it before using
         UNION ALL 
         SELECT *
         FROM {{ref('stg_raw__facebook')}}
+
+4 - Deploy
+    4.1 - Create a production environment
+
+    4.2 - Create a job to deploy on the production environment
+
+    4.3 - Check BigQuery to make sure the datasets, views and tables were correctly created
